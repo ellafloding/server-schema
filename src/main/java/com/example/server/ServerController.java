@@ -67,6 +67,8 @@ public class ServerController {
         formData.add("calendar_event[title]", requestBody.getTitle());
         formData.add("calendar_event[start_at]", requestBody.getStartAt());
         formData.add("calendar_event[end_at]", requestBody.getEndAt());
+        formData.add("calendar_event[description]", requestBody.getDescription());
+        formData.add("calendar_event[location_name]", requestBody.getLocationName());
 
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", "Bearer 3755~ibTv6HTwA02LPjard6bpFngTsfYw3ZKKU4PeJlionVo2hr5lL4lv0hjrE44NED5g");
@@ -76,7 +78,7 @@ public class ServerController {
         //HttpEntity<Object> requestEntity = new HttpEntity<>(formData, headers);
 
         ResponseEntity<String> responseEntity = restTemplate.exchange(targetApiUrl, HttpMethod.POST, requestEntity, String.class);
-        return responseEntity + requestBody.getContextCode();
+        return responseEntity.toString();
     }
 
 }

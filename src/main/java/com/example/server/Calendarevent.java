@@ -5,6 +5,27 @@ public class Calendarevent {
     private String startAt;
     private String endAt;
     private String title;
+    private String description;
+    private String locationName;
+
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getLocationName() {
+        return locationName;
+    }
+
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
+    }
+
+
     public String getContextCode() {
         return contextCode;
     }
